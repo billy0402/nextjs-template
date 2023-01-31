@@ -1,4 +1,10 @@
+import { setLayoutType } from '@/reducers/layout';
+import { useRouter } from 'next/router';
+import { useEffect } from 'react';
+
 import { LayoutType } from '@/enums/layout-type';
+import { toLayoutType } from '@/helpers/router';
+import useAppDispatch from '@/hooks/useAppDispatch';
 import useAppSelector from '@/hooks/useAppSelector';
 
 import AdminLayout from './AdminLayout';
@@ -9,7 +15,18 @@ type Props = {
 };
 
 const Layout = ({ children }: Props) => {
+  const router = useRouter();
+  const dispatch = useAppDispatch();
+
+  const { pathname } = router;
+
   const { layoutType } = useAppSelector((state) => state.layout);
+
+  useEffect(() => {
+    const newLayoutType = toLayoutType(pathname);
+    if (layoutType === newLayoutType) return;
+    dispatch(setLayoutType(newLayoutType));
+  }, [dispatch, layoutType, pathname]);
 
   return (
     <>
