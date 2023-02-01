@@ -1,0 +1,18 @@
+@mixin triangle($color: $color_white, $width: 8px, $height: 5px) {
+  width: 0;
+  height: 0;
+  border-width: 0 $height $width $height;
+  border-style: solid;
+  border-color: transparent transparent $color transparent;
+}
+
+@mixin square($size, $radius: 0px, $isCircle: false) {
+  width: $size;
+  height: $size;
+
+  @if $isCircle {
+    border-radius: $size / 2;
+  } @else {
+    border-radius: $radius;
+  }
+}

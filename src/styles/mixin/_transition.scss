@@ -1,0 +1,51 @@
+@mixin hoverColorTransition($color, $hoverValue: darken($color, 10)) {
+  color: $color;
+  transition: color 300ms;
+
+  &:hover,
+  &.active {
+    color: $hoverValue;
+  }
+}
+
+@mixin hoverBackgroundTransition(
+  $background,
+  $hoverValue: darken($background, 5)
+) {
+  background-color: $background;
+  transition: background-color 300ms;
+
+  &:hover {
+    background-color: $hoverValue;
+  }
+}
+
+@mixin hoverActiveColorBackgroundTransition(
+  $color,
+  $background,
+  $hoverBackground: $color,
+  $hoverColor: $background
+) {
+  background-color: $background;
+  color: $color;
+  transition: background-color 300ms, color 300ms;
+
+  &:hover,
+  &.active {
+    background-color: $hoverBackground;
+    color: $hoverColor;
+  }
+}
+
+@mixin hoverActiveBorderBgTransition($color) {
+  border: $color solid 1px;
+  background-color: transparent;
+  color: $color;
+  transition: background-color 300ms, color 300ms;
+
+  &:hover,
+  &.active {
+    background-color: $color;
+    color: $color_white;
+  }
+}

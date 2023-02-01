@@ -1,0 +1,15 @@
+@mixin layoutSpaceLeft($size: $margin_small) {
+  margin-left: $size;
+
+  &:nth-child(1) {
+    margin-left: 0;
+  }
+}
+
+@mixin layoutSpaceBottom($size: $layout-margin_small) {
+  margin-top: $size;
+
+  &:nth-child(1) {
+    margin-top: 0;
+  }
+}

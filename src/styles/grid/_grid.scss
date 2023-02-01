@@ -1,0 +1,22 @@
+@for $number from 2 through 4 {
+  .grid-#{$number} {
+    display: grid;
+
+    grid-template-columns: repeat(#{$number}, 1fr);
+    grid-gap: 10px;
+
+    @if $number>2 {
+      @include pad-width() {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    } @else {
+      @include pad-width() {
+        grid-template-columns: repeat(1, 1fr);
+      }
+    }
+
+    @include phone-width() {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+}
