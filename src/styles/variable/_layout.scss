@@ -1,0 +1,25 @@
+$padding_small: 20px;
+$padding_base: 40px;
+$padding_big: 60px;
+
+$margin_small: 20px;
+$margin_base: 40px;
+$margin_big: 60px;
+
+$radius-size_base: 6px;
+$radius-size_big: 20px;
+$radius-size_over: 100px;
+
+$z-index_back: -1;
+$z-index_base: 10;
+$z-index_front: 100;
+$z-index_cover: 1000;
+
+$border-radius_layout: 8px;
+
+// 20px
+$block-padding_small: $padding_small;
+// 20px 40px
+$block-padding_base: $padding_small $padding_base;
+// 40px 60px
+$block-padding_big: $padding_base $padding_big;

@@ -1,0 +1,54 @@
+#__next {
+  min-height: 100vh;
+  max-width: 100vw;
+}
+
+body {
+  background-color: $color_primary;
+  color: $color_text;
+  letter-spacing: 2px;
+  font-family: 'Noto Sans TC', sans-serif;
+  line-height: 1.5;
+}
+
+$title-font-size: (
+  '1': 2em,
+  '2': 1.8em,
+  '3': 1.6em,
+  '4': 1.2em,
+  '5': 1em,
+  '6': 0.85em,
+);
+
+@each $name, $size in $title-font-size {
+  h#{$name} {
+    color: $color_accent;
+    font-weight: 500;
+    font-size: $size;
+  }
+}
+
+.text-white {
+  color: $color_white;
+}
+
+.text-accent {
+  color: $color_accent;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.margin-top {
+  margin-top: $margin_base;
+}
+
+.margin-bottom {
+  margin-bottom: $margin_base;
+}
+
+.margin-center {
+  margin-right: auto;
+  margin-left: auto;
+}
