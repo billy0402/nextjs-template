@@ -1,6 +1,7 @@
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 
+import { ChakraProvider } from '@chakra-ui/react';
 import { QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { Provider as ReduxProvider } from 'react-redux';
@@ -8,6 +9,7 @@ import { Provider as ReduxProvider } from 'react-redux';
 import Layout from '@/components/Layout';
 import { queryClient } from '@/queries/query-client';
 import wrapper from '@/redux/store';
+import { theme } from '@/theme';
 
 const App = ({ Component, ...pageProps }: AppProps) => {
   const { store, props } = wrapper.useWrappedStore(pageProps);
@@ -18,9 +20,11 @@ const App = ({ Component, ...pageProps }: AppProps) => {
         <Head>
           <title>Next.js Template</title>
         </Head>
-        <Layout>
-          <Component {...props.pageProps} />
-        </Layout>
+        <ChakraProvider theme={theme}>
+          <Layout>
+            <Component {...props.pageProps} />
+          </Layout>
+        </ChakraProvider>
         <ReactQueryDevtools initialIsOpen={false} />
       </QueryClientProvider>
     </ReduxProvider>
