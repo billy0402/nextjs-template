@@ -3,6 +3,7 @@
     "next/core-web-vitals",
     "airbnb",
     "airbnb-typescript",
+    "plugin:jest/recommended",
     "prettier"
   ],
   "parserOptions": {
@@ -22,5 +23,6 @@
     "react/jsx-props-no-spreading": "off",
     "react/react-in-jsx-scope": "off",
     "react/require-default-props": ["error", { "functions": "ignore" }]
-  }
+  },
+  "ignorePatterns": ["jest.config.js"]
 }

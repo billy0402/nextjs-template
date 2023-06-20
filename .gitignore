@@ -8,6 +8,7 @@
 
 # testing
 /coverage
+src/__tests__/__snapshots__/
 
 # next.js
 /.next/

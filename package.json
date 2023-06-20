@@ -10,6 +10,8 @@
     "prettier": "prettier --check .",
     "format": "prettier --write .",
     "lint-staged": "lint-staged",
+    "test": "jest",
+    "test:watch": "jest --watch",
     "prepare": "husky install"
   },
   "dependencies": {
