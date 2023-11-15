@@ -1,7 +1,7 @@
 import type { ApiState } from '@/models/api/api-state';
-import type { Enum } from '@/models/enum';
+import type { Enum } from '@/models/utils';
 
-import { toApiStatus } from './extra-reducers';
+import { toApiStatus } from '@/helpers/redux/extra-reducers';
 
 export const newApiState = <T extends ApiState>(_enum: Enum) => {
   return {

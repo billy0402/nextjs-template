@@ -1,4 +1,4 @@
-import type { Enum } from '@/models/enum';
+import type { Enum } from '@/models/utils';
 
 export type ApiStatusType = 'loading' | 'success' | 'failed';
 

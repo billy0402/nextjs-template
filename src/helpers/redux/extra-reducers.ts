@@ -31,6 +31,7 @@ export const asyncMatcher = (
         ...state.status,
         ...toApiStatus(actionType, 'loading'),
       };
+      state.error[`${actionType}Error`] = null;
     })
     .addMatcher(isFulfilledAction(reducerName), (state, action) => {
       const actionType = getActionType(action.type, reducerName);
@@ -45,9 +46,6 @@ export const asyncMatcher = (
         ...state.status,
         ...toApiStatus(actionType, 'failed'),
       };
-      state.error = {
-        ...state.error,
-        [`${actionType}Error`]: (action.error as Error)?.message,
-      };
+      state.error[`${actionType}Error`] = (action.error as Error)?.message;
     });
 };
