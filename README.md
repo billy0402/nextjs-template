@@ -2,10 +2,10 @@
 
 ## environment
 
-- [macOS 12.6.6](https://www.apple.com/tw/macos/monterey/)
-- [Visual Studio Code 1.79.2](https://code.visualstudio.com/)
-- [nvm 0.39.1, node 16.16.0, npm 8.11.0](https://nodejs.org/en/)
-- [Next.js 13.4.6](https://nextjs.org/)
+- [macOS 12.7.1](https://www.apple.com/tw/macos/monterey/)
+- [Visual Studio Code 1.84.1](https://code.visualstudio.com/)
+- [nvm 0.39.5, node 20.9.0, npm 10.1.0](https://nodejs.org/en/)
+- [Next.js 14.0.2](https://nextjs.org/)
 - [React.js 18.2.0](https://react.dev/)
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
@@ -20,6 +20,8 @@ npm run dev
 yarn dev
 # or
 pnpm dev
+# or
+bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
