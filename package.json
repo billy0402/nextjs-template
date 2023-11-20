@@ -7,7 +7,10 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "prettier": "prettier --check ."
+    "prettier": "prettier --check .",
+    "format": "prettier --write .",
+    "lint-staged": "lint-staged",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@reduxjs/toolkit": "1.9.7",
