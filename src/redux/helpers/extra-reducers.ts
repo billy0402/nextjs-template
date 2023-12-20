@@ -1,12 +1,12 @@
 import type { ActionReducerMapBuilder } from '@reduxjs/toolkit';
 
-import { ReducerName } from '@/enums/reducer-name';
+import { ReducerName } from '@/redux/enums/reducer-name';
 import {
   isFulfilledAction,
   isPendingAction,
   isRejectedAction,
-} from '@/models/api/api-action-type';
-import type { ApiState, ApiStatusType } from '@/models/api/api-state';
+} from '@/redux/models/api/api-action-type';
+import type { ApiState, ApiStatusType } from '@/redux/models/api/api-state';
 
 const getActionType = (value: string, prefix: string) =>
   value.substring(prefix.length).split('/')[1];

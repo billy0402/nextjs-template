@@ -1,11 +1,11 @@
-import { setLayoutType } from '@/reducers/layout';
+import { setLayoutType } from '@/redux/reducers/layout';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 
 import { LayoutType } from '@/enums/layout-type';
 import { toLayoutType } from '@/helpers/router';
-import useAppDispatch from '@/hooks/useAppDispatch';
-import useAppSelector from '@/hooks/useAppSelector';
+import useAppDispatch from '@/redux/hooks/useAppDispatch';
+import useAppSelector from '@/redux/hooks/useAppSelector';
 
 import AdminLayout from './AdminLayout';
 import ClientLayout from './ClientLayout';

@@ -2,8 +2,8 @@ import { configureStore } from '@reduxjs/toolkit';
 import { createWrapper } from 'next-redux-wrapper';
 
 import { isDebug } from '@/fixtures/constants';
-import type { AppStore } from '@/models/store';
-import appReducer from '@/reducers';
+import type { AppStore } from '@/redux/models/store';
+import appReducer from '@/redux/reducers';
 
 export const makeStore = () =>
   configureStore({ reducer: appReducer, devTools: isDebug });

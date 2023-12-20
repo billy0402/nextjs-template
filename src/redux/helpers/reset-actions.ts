@@ -1,5 +1,6 @@
-import type { ApiState } from '@/models/api/api-state';
 import type { PayloadAction } from '@reduxjs/toolkit';
+
+import type { ApiState } from '@/redux/models/api/api-state';
 
 export type ApiStateAction<T extends ApiState> =
   keyof T['error'] extends `${infer P}Error` ? P : never;
