@@ -1,8 +1,10 @@
 import { LayoutType } from '@/enums/layout-type';
 
-export const getMainRoute = (url: string) => url.split('/')[1];
+export function getMainRoute(url: string) {
+  return url.split('/')[1];
+}
 
-export const toLayoutType = (url: string) => {
+export function toLayoutType(url: string) {
   const mainRoute = getMainRoute(url);
 
   switch (mainRoute) {
@@ -11,4 +13,4 @@ export const toLayoutType = (url: string) => {
     default:
       return LayoutType.CLIENT;
   }
-};
+}

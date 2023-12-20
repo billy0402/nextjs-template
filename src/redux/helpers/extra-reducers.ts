@@ -8,22 +8,25 @@ import {
 } from '@/redux/models/api/api-action';
 import type { ApiState, ApiStatusType } from '@/redux/models/api/api-state';
 
-const getActionType = (value: string, prefix: string) =>
-  value.substring(prefix.length).split('/')[1];
+function getActionType(value: string, prefix: ReducerName) {
+  return value.substring(prefix.length).split('/')[1];
+}
 
-export const toApiStatus = (
+export function toApiStatus(
   actionType: string,
   apiStatusType: ApiStatusType | null,
-) => ({
-  [`${actionType}Loading`]: apiStatusType === 'loading',
-  [`${actionType}Success`]: apiStatusType === 'success',
-  [`${actionType}Failed`]: apiStatusType === 'failed',
-});
+) {
+  return {
+    [`${actionType}Loading`]: apiStatusType === 'loading',
+    [`${actionType}Success`]: apiStatusType === 'success',
+    [`${actionType}Failed`]: apiStatusType === 'failed',
+  };
+}
 
-export const asyncMatcher = (
+export function asyncMatcher(
   builder: ActionReducerMapBuilder<ApiState>,
   reducerName: ReducerName,
-) => {
+) {
   builder
     .addMatcher(isPendingAction(reducerName), (state, action) => {
       const actionType = getActionType(action.type, reducerName);
@@ -48,4 +51,4 @@ export const asyncMatcher = (
       };
       state.error[`${actionType}Error`] = (action.error as Error)?.message;
     });
-};
+}

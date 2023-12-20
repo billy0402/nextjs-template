@@ -5,8 +5,9 @@ import { isDebug } from '@/fixtures/constants';
 import type { AppStore } from '@/redux/models/store';
 import appReducer from '@/redux/reducers';
 
-export const makeStore = () =>
-  configureStore({ reducer: appReducer, devTools: isDebug });
+export function makeStore() {
+  return configureStore({ reducer: appReducer, devTools: isDebug });
+}
 
 const wrapper = createWrapper<AppStore>(makeStore, { debug: false });
 

@@ -6,25 +6,25 @@ type PendingAction = ReturnType<GenericAsyncThunk['pending']>;
 type FulfilledAction = ReturnType<GenericAsyncThunk['fulfilled']>;
 type RejectedAction = ReturnType<GenericAsyncThunk['rejected']>;
 
-const hasPrefix = (action: UnknownAction, prefix: string) =>
-  action.type.startsWith(prefix);
-const hasSuffix = (action: UnknownAction, suffix: string) =>
-  action.type.endsWith(suffix);
-export const getActionType = (value: string, prefix: string) =>
-  value.substring(prefix.length).split('/')[1];
+function hasPrefix(action: UnknownAction, prefix: string) {
+  return action.type.startsWith(prefix);
+}
+function hasSuffix(action: UnknownAction, suffix: string) {
+  return action.type.endsWith(suffix);
+}
+export function getActionType(value: string, prefix: string) {
+  return value.substring(prefix.length).split('/')[1];
+}
 
-export const isPendingAction =
-  (prefix: string) =>
-  (action: UnknownAction): action is PendingAction => {
-    return hasPrefix(action, prefix) && hasSuffix(action, '/pending');
-  };
-export const isFulfilledAction =
-  (prefix: string) =>
-  (action: UnknownAction): action is FulfilledAction => {
-    return hasPrefix(action, prefix) && hasSuffix(action, '/fulfilled');
-  };
-export const isRejectedAction =
-  (prefix: string) =>
-  (action: UnknownAction): action is RejectedAction => {
-    return hasPrefix(action, prefix) && hasSuffix(action, '/rejected');
-  };
+export function isPendingAction(prefix: string) {
+  return (action: UnknownAction): action is PendingAction =>
+    hasPrefix(action, prefix) && hasSuffix(action, '/pending');
+}
+export function isFulfilledAction(prefix: string) {
+  return (action: UnknownAction): action is FulfilledAction =>
+    hasPrefix(action, prefix) && hasSuffix(action, '/fulfilled');
+}
+export function isRejectedAction(prefix: string) {
+  return (action: UnknownAction): action is RejectedAction =>
+    hasPrefix(action, prefix) && hasSuffix(action, '/rejected');
+}
