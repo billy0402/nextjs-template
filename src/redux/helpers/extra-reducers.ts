@@ -5,7 +5,7 @@ import {
   isFulfilledAction,
   isPendingAction,
   isRejectedAction,
-} from '@/redux/models/api/api-action-type';
+} from '@/redux/models/api/api-action';
 import type { ApiState, ApiStatusType } from '@/redux/models/api/api-state';
 
 const getActionType = (value: string, prefix: string) =>
