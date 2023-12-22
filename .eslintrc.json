@@ -4,7 +4,8 @@
     "airbnb",
     "airbnb-typescript",
     "plugin:jest/recommended",
-    "prettier"
+    "prettier",
+    "plugin:storybook/recommended"
   ],
   "parserOptions": {
     "project": "tsconfig.json"
