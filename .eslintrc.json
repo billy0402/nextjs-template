@@ -4,7 +4,8 @@
     "airbnb",
     "airbnb-typescript",
     "plugin:jest/recommended",
-    "prettier"
+    "prettier",
+    "plugin:storybook/recommended"
   ],
   "parserOptions": {
     "project": "tsconfig.json"
@@ -14,15 +15,24 @@
     "import/prefer-default-export": ["off"],
     "no-param-reassign": [
       "error",
-      { "ignorePropertyModificationsFor": ["state"] }
+      {
+        "ignorePropertyModificationsFor": ["state"]
+      }
     ],
     "react/function-component-definition": [
       "error",
-      { "namedComponents": "arrow-function" }
+      {
+        "namedComponents": "arrow-function"
+      }
     ],
     "react/jsx-props-no-spreading": "off",
     "react/react-in-jsx-scope": "off",
-    "react/require-default-props": ["error", { "functions": "ignore" }]
+    "react/require-default-props": [
+      "error",
+      {
+        "functions": "ignore"
+      }
+    ]
   },
   "ignorePatterns": ["jest.config.js"]
 }
