@@ -1,6 +1,6 @@
 import type { ActionReducerMapBuilder } from '@reduxjs/toolkit';
 
-import { ReducerName } from '@/redux/enums/reducer-name';
+import type { ReducerName } from '@/redux/enums/reducer-name';
 import {
   isFulfilledAction,
   isPendingAction,

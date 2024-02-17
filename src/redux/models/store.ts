@@ -1,7 +1,7 @@
 import type { ThunkAction } from '@reduxjs/toolkit';
 import type { Action } from 'redux';
 
-import { makeStore } from '@/redux/store';
+import type { makeStore } from '@/redux/store';
 
 export type AppStore = ReturnType<typeof makeStore>;
 export type AppState = ReturnType<AppStore['getState']>;
