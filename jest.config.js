@@ -10,12 +10,17 @@ const createJestConfig = nextJest({
 const config = {
   coverageProvider: 'v8',
   testEnvironment: 'jest-environment-jsdom',
+  testEnvironmentOptions: {
+    customExportConditions: [''],
+  },
+  setupFiles: ['<rootDir>/jest.polyfills.js'],
   // Add more setup options before each test is run
   setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1',
-    '^@/public/(.*)$': '<rootDir>/src/public/$1',
+    '^@/public/(.*)$': '<rootDir>/public/$1',
   },
+  testPathIgnorePatterns: ['/__tests__/utils/'],
 };
 
 // createJestConfig is exported this way to ensure that next/jest can load the Next.js config which is async
