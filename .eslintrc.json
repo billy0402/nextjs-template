@@ -3,6 +3,7 @@
     "next/core-web-vitals",
     "airbnb",
     "airbnb-typescript",
+    "plugin:@tanstack/eslint-plugin-query/recommended",
     "plugin:jest/recommended",
     "prettier",
     "plugin:storybook/recommended"
@@ -25,5 +26,5 @@
     "react/react-in-jsx-scope": "off",
     "react/require-default-props": ["error", { "functions": "ignore" }]
   },
-  "ignorePatterns": ["jest.config.js"]
+  "ignorePatterns": ["*.js", "*.jsx"]
 }
