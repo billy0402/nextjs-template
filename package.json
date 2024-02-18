@@ -63,11 +63,15 @@
     "prettier": "3.1.1",
     "sass": "1.69.5",
     "storybook": "8.0.8",
-    "typescript": "5.3.3"
+    "typescript": "5.3.3",
+    "undici": "5.28.2"
   },
   "overrides": {
     "msw": {
       "typescript": "$typescript"
     }
+  },
+  "msw": {
+    "workerDirectory": "public"
   }
 }
