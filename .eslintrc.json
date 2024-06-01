@@ -12,6 +12,7 @@
     "project": "tsconfig.json"
   },
   "rules": {
+    // override airbnb
     "arrow-body-style": ["off"],
     "import/prefer-default-export": ["off"],
     "no-param-reassign": [
@@ -24,7 +25,47 @@
     ],
     "react/jsx-props-no-spreading": "off",
     "react/react-in-jsx-scope": "off",
-    "react/require-default-props": ["error", { "functions": "ignore" }]
+    "react/require-default-props": ["error", { "functions": "ignore" }],
+    // custom
+    "no-restricted-imports": ["error", { "patterns": ["..", "../*"] }],
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          "parent",
+          "sibling",
+          "index",
+          "object"
+        ],
+        "pathGroups": [
+          {
+            "pattern": "react",
+            "group": "external",
+            "position": "before"
+          },
+          {
+            "pattern": "next",
+            "group": "external",
+            "position": "before"
+          },
+          {
+            "pattern": "next/**",
+            "group": "external",
+            "position": "before"
+          },
+          {
+            "pattern": "@/**",
+            "group": "internal"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": ["react", "next"],
+        "newlines-between": "always-and-inside-groups"
+      }
+    ],
+    "@typescript-eslint/consistent-type-imports": "error"
   },
   "ignorePatterns": ["*.js", "*.jsx"]
 }
