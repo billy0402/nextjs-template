@@ -26,7 +26,7 @@
     "react/jsx-props-no-spreading": "off",
     "react/react-in-jsx-scope": "off",
     "react/require-default-props": ["error", { "functions": "ignore" }],
-    // custom
+    // import
     "no-restricted-imports": ["error", { "patterns": ["..", "../*"] }],
     "import/order": [
       "error",
@@ -65,7 +65,28 @@
         "newlines-between": "always-and-inside-groups"
       }
     ],
-    "@typescript-eslint/consistent-type-imports": "error"
+    "@typescript-eslint/consistent-type-imports": "error",
+    // sort props
+    "react/jsx-sort-props": [
+      "error",
+      {
+        "ignoreCase": true,
+        "callbacksLast": true,
+        "shorthandFirst": false,
+        "shorthandLast": false,
+        "noSortAlphabetically": false,
+        "reservedFirst": true
+      }
+    ]
+    // "react/sort-prop-types": [
+    //   "error",
+    //   {
+    //     "ignoreCase": true,
+    //     "callbacksLast": true,
+    //     "requiredFirst": true,
+    //     "sortShapeProp": true
+    //   }
+    // ]
   },
   "ignorePatterns": ["*.js", "*.jsx"]
 }
