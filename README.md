@@ -24,12 +24,41 @@ First, run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```
+
+## Other scripts
+
+```shell
+# build the production version
+$ npm run build
+
+# run the production server
+$ npm run start
+
+# static code analysis
+$ npm run lint
+
+# fix lint problems
+$ npm run lint:fix
+
+# check coding style
+$ npm run prettier
+
+# format with coding style
+$ npm run format
+
+# used by git pre-commit (husky)
+# config file: .lintstagedrc.js
+$ npm run lint-staged
+
+# run testing
+$ npm run test
+
+# [Development] run testing with watch mode
+$ npm run test:watch
+
+# check testing coverage
+$ npm run test:coverage
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
