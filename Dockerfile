@@ -7,6 +7,7 @@ FROM base AS builder
 WORKDIR /app
 
 ENV NEXT_TELEMETRY_DISABLED 1
+ENV NEXT_PUBLIC_API_URL=NEXT_PUBLIC_API_URL
 
 RUN apk add --no-cache libc6-compat
 
@@ -37,9 +38,13 @@ COPY --from=builder /app/package.json ./package.json
 
 COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
+COPY --from=builder --chown=nextjs:nodejs /app/scripts/entrypoint.sh ./scripts/entrypoint.sh
 
 USER nextjs
 
 EXPOSE ${PORT}
+
+RUN chmod +x /app/scripts/entrypoint.sh
+ENTRYPOINT ["/app/scripts/entrypoint.sh"]
 
 CMD ["node", "server.js"]
