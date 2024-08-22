@@ -15,7 +15,10 @@ const config = {
   },
   setupFiles: ['<rootDir>/jest.polyfills.js'],
   // Add more setup options before each test is run
-  setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
+  setupFilesAfterEnv: [
+    '<rootDir>/.jest/setEnvVars.js',
+    '<rootDir>/jest.setup.js',
+  ],
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1',
     '^@/public/(.*)$': '<rootDir>/public/$1',
