@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 
 import { useRouter } from 'next/router';
 
+import DayNight from '@/components/DayNight';
 import { LayoutType } from '@/enums/layout-type';
 import { toLayoutType } from '@/helpers/router';
 import useAppDispatch from '@/redux/hooks/useAppDispatch';
@@ -31,6 +32,7 @@ const Layout = ({ children }: Props) => {
 
   return (
     <>
+      <DayNight />
       {layoutType === LayoutType.ADMIN && <AdminLayout>{children}</AdminLayout>}
       {layoutType === LayoutType.CLIENT && (
         <ClientLayout>{children}</ClientLayout>
