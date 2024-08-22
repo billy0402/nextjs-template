@@ -1,8 +1,9 @@
-export type AuthLoginRequest = {
+export type AuthLoginIn = {
   username: string;
   password: string;
 };
 
-export type AuthLoginResponse = {
-  token: string;
+export type TokenPayload = {
+  access: string;
+  refresh: string;
 };

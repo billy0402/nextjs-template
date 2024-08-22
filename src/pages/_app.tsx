@@ -6,7 +6,7 @@ import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { Provider as ReduxProvider } from 'react-redux';
 
 import Layout from '@/components/Layout';
-import { queryClient } from '@/helpers/query-client';
+import { queryClient } from '@/queries/query-client';
 import wrapper from '@/redux/store';
 
 import '@/styles/globals.scss';

@@ -1,6 +1,6 @@
-import type { AuthLoginRequest, AuthLoginResponse } from '@/models/auth';
-import instance from '@/services/utils/instance';
+import type { AuthLoginIn, TokenPayload } from '@/models/auth';
+import instance from '@/services/instance';
 
-export function apiAuthLogin(data: AuthLoginRequest) {
-  return instance.post<AuthLoginResponse>('/auth/token', data);
+export function apiAuthLogin(data: AuthLoginIn) {
+  return instance.post<TokenPayload>('/auth/token', data);
 }
