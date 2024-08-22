@@ -5,8 +5,8 @@
     "airbnb-typescript",
     "plugin:@tanstack/eslint-plugin-query/recommended",
     "plugin:jest/recommended",
-    "prettier",
-    "plugin:storybook/recommended"
+    "plugin:storybook/recommended",
+    "prettier"
   ],
   "parserOptions": {
     "project": "tsconfig.json"
@@ -87,6 +87,5 @@
     //     "sortShapeProp": true
     //   }
     // ]
-  },
-  "ignorePatterns": ["*.js", "*.jsx"]
+  }
 }

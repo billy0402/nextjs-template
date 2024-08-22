@@ -7,6 +7,6 @@ function buildEslintCommand(filenames) {
 }
 
 module.exports = {
-  '*': 'npm run format',
+  '*': 'npm run format:fix',
   '*.{js,jsx,ts,tsx}': buildEslintCommand,
 };

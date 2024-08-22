@@ -2,11 +2,11 @@
 
 ## environment
 
-- [macOS 12.7.2](https://www.apple.com/tw/macos/monterey/)
-- [Visual Studio Code 1.84.1](https://code.visualstudio.com/)
-- [nvm 0.39.5, node 20.10.0, npm 10.2.3](https://nodejs.org/en/)
-- [Next.js 14.0.4](https://nextjs.org/)
-- [React.js 18.2.0](https://react.dev/)
+- [macOS 12.7.5](https://www.apple.com/tw/macos/monterey/)
+- [Visual Studio Code 1.85.1](https://code.visualstudio.com/)
+- [nvm 0.39.7, node 20.10.0, npm 10.2.3](https://nodejs.org/en/)
+- [Next.js 14.2.6](https://nextjs.org/)
+- [React.js 18.3.1](https://react.dev/)
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
@@ -20,7 +20,7 @@ $ npm install --save-dev
 
 ## Getting Started
 
-First, run the development server:
+Run the development server:
 
 ```bash
 npm run dev
@@ -42,10 +42,10 @@ $ npm run lint
 $ npm run lint:fix
 
 # check coding style
-$ npm run prettier
+$ npm run format
 
 # format with coding style
-$ npm run format
+$ npm run format:fix
 
 # used by git pre-commit (husky)
 # config file: .lintstagedrc.js
