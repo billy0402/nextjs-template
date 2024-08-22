@@ -1,0 +1,14 @@
+import { IconGallery, IconItem, Meta } from '@storybook/blocks';
+import * as Icons from '@storybook/icons';
+
+import CustomIcon, { icons } from 'src/components/CustomIcon';
+
+<Meta title='Custom Chakra Component/Iconography' />
+
+<IconGallery>
+  {Object.keys(icons).map((name) => (
+    <IconItem key={name} name={name}>
+      <CustomIcon name={name} fontSize='3xl' />
+    </IconItem>
+  ))}
+</IconGallery>

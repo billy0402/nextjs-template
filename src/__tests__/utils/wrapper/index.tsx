@@ -1,3 +1,4 @@
+import ChakraWrapper from './chakra';
 import ReactQueryWrapper from './react-query';
 import ReduxWrapper from './redux';
 
@@ -8,7 +9,9 @@ type Props = {
 const wrapper = ({ children }: Props) => {
   return (
     <ReduxWrapper>
-      <ReactQueryWrapper>{children}</ReactQueryWrapper>
+      <ReactQueryWrapper>
+        <ChakraWrapper>{children}</ChakraWrapper>
+      </ReactQueryWrapper>
     </ReduxWrapper>
   );
 };

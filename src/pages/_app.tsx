@@ -7,9 +7,9 @@ import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { Provider as ReduxProvider } from 'react-redux';
 
 import Layout from '@/components/Layout';
+import { theme } from '@/fixtures/theme';
 import { queryClient } from '@/queries/query-client';
 import wrapper from '@/redux/store';
-import { theme } from '@/theme';
 
 const App = ({ Component, ...pageProps }: AppProps) => {
   const { store, props } = wrapper.useWrappedStore(pageProps);

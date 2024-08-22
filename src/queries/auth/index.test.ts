@@ -2,10 +2,11 @@ import { act, renderHook, waitFor } from '@testing-library/react';
 
 import { HttpStatusCode } from 'axios';
 
-import wrapper from '@/__tests__/utils/wrapper';
 import { BASE_API_URL } from '@/fixtures/constants';
 import type { TokenPayload } from '@/models/auth';
 import { apiAuthLogin } from '@/services/auth';
+
+import ReactQueryWrapper from '@/__tests__/utils/wrapper/react-query';
 
 import { useAuthLogin } from '.';
 
@@ -30,7 +31,7 @@ describe('react query auth module', () => {
 
   test('login api using react query', async () => {
     const { result } = renderHook(() => useAuthLogin(() => undefined), {
-      wrapper,
+      wrapper: ReactQueryWrapper,
     });
 
     act(() => result.current.mutate({ username: 'test', password: 'test' }));
