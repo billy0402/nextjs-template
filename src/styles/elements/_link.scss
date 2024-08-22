@@ -1,6 +1,0 @@
-.link {
-  text-decoration: none;
-  cursor: pointer;
-
-  @include hoverColorTransition($color_accent-light, $color_text);
-}

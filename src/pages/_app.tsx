@@ -9,8 +9,6 @@ import Layout from '@/components/Layout';
 import { queryClient } from '@/queries/query-client';
 import wrapper from '@/redux/store';
 
-import '@/styles/globals.scss';
-
 const App = ({ Component, ...pageProps }: AppProps) => {
   const { store, props } = wrapper.useWrappedStore(pageProps);
 
