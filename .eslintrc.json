@@ -78,14 +78,6 @@
         "reservedFirst": true
       }
     ]
-    // "react/sort-prop-types": [
-    //   "error",
-    //   {
-    //     "ignoreCase": true,
-    //     "callbacksLast": true,
-    //     "requiredFirst": true,
-    //     "sortShapeProp": true
-    //   }
-    // ]
-  }
+  },
+  "ignorePatterns": ["*.js", "*.jsx"]
 }
