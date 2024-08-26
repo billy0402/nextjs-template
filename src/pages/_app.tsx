@@ -6,6 +6,7 @@ import { QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { Provider as ReduxProvider } from 'react-redux';
 
+import Fonts from '@/components/Fonts';
 import Layout from '@/components/Layout';
 import { theme } from '@/fixtures/theme';
 import { queryClient } from '@/queries/query-client';
@@ -15,19 +16,22 @@ const App = ({ Component, ...pageProps }: AppProps) => {
   const { store, props } = wrapper.useWrappedStore(pageProps);
 
   return (
-    <ReduxProvider store={store}>
-      <QueryClientProvider client={queryClient}>
-        <Head>
-          <title>Next.js Template</title>
-        </Head>
-        <ChakraProvider theme={theme}>
-          <Layout>
-            <Component {...props.pageProps} />
-          </Layout>
-        </ChakraProvider>
-        <ReactQueryDevtools initialIsOpen={false} />
-      </QueryClientProvider>
-    </ReduxProvider>
+    <>
+      <Head>
+        <title>Next.js Template</title>
+      </Head>
+      <ReduxProvider store={store}>
+        <QueryClientProvider client={queryClient}>
+          <ChakraProvider theme={theme}>
+            <Fonts />
+            <Layout>
+              <Component {...props.pageProps} />
+            </Layout>
+          </ChakraProvider>
+          <ReactQueryDevtools initialIsOpen={false} />
+        </QueryClientProvider>
+      </ReduxProvider>
+    </>
   );
 };
 
