@@ -17,6 +17,7 @@ import { dotKeysValue } from '@/helpers/object';
 const CheckboxField = ({
   getValues,
   control,
+  setValue,
   formState: { errors },
   fieldConfig: { name, label, required, options, displayOptions },
 }: FieldProps<'checkbox'>) => {
@@ -45,7 +46,11 @@ const CheckboxField = ({
           <CheckboxGroup {...field}>
             <Stack direction='row' spacing={5} wrap='wrap'>
               {options?.map((option, index) => (
-                <Checkbox key={option} value={option}>
+                <Checkbox
+                  key={option}
+                  value={option}
+                  onChange={() => setValue(field.name, [option])}
+                >
                   {displayOptions && displayOptions[index]
                     ? displayOptions[index]
                     : option}

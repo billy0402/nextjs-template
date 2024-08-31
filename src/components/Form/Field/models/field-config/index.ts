@@ -21,7 +21,7 @@ type DefaultFieldConfig = BaseFieldConfig & {
   type: Exclude<string, OptionsType | 'array'>;
 };
 
-export type OptionsType = 'select' | 'checkbox' | 'radio';
+export type OptionsType = 'select' | 'checkbox' | 'singleCheckbox' | 'radio';
 
 type OptionsFieldConfig = BaseFieldConfig<OptionsType> & {
   options: any[];

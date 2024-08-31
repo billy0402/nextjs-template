@@ -10,6 +10,7 @@ import CheckboxField from './src/Checkbox';
 import Input from './src/Input';
 import RadioField from './src/Radio';
 import SelectField from './src/Select';
+import SingleCheckboxField from './src/SingleCheckbox';
 import TextareaField from './src/Textarea';
 
 type Props = {
@@ -41,6 +42,13 @@ const Field = ({ fieldConfig }: Props) => {
     case 'checkbox':
       return (
         <CheckboxField
+          {...methods}
+          fieldConfig={fieldConfig as FieldConfig<'checkbox'>}
+        />
+      );
+    case 'singleCheckbox':
+      return (
+        <SingleCheckboxField
           {...methods}
           fieldConfig={fieldConfig as FieldConfig<'checkbox'>}
         />
