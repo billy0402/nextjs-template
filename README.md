@@ -2,10 +2,10 @@
 
 ## environment
 
-- [macOS 12.7.5](https://www.apple.com/tw/macos/monterey/)
-- [Visual Studio Code 1.85.1](https://code.visualstudio.com/)
+- [macOS 12.7.6](https://www.apple.com/tw/macos/monterey/)
+- [Visual Studio Code 1.95.2](https://code.visualstudio.com/)
 - [nvm 0.39.7, node 20.10.0, npm 10.2.3](https://nodejs.org/en/)
-- [Next.js 14.2.6](https://nextjs.org/)
+- [Next.js 14.2.18](https://nextjs.org/)
 - [React.js 18.3.1](https://react.dev/)
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
